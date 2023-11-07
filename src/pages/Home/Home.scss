@@ -1,0 +1,104 @@
+#home {
+	position: fixed; top: 0px; bottom: 0px;
+	right: 0px; left: 0px; display: flex; align-items: center;
+	justify-content: center;
+	background: radial-gradient(50% 50% at 50% 50%, #262845 0%, #0E0F21 100%);
+	#homebase {
+		width: 400px; height: 507px; 
+		background: url('./images/homebase.png') center no-repeat;
+		background-size: 400px 507px; position: relative;
+		z-index: 5000;
+		#display {
+			width: 220px; height: 40px; position: absolute; 
+			right: 90px; top: 40px; font-family: 'DS-Digital';
+			display: flex; justify-content: center; align-items: center;
+			color: #FFF; font-size: 22px;
+		}
+		.status {
+			width: 265px; height: 200px; position: absolute;
+			background-size: 265px auto; bottom: 50px; left: 65px;
+			background-position: center; background-repeat: no-repeat;
+			opacity: 0;
+			&#status-white {
+				background-image: url('./images/glow-white.png');
+			}
+			&#status-green {
+				background-image: url('./images/glow-green.png');
+			}
+			&#status-blue {
+				background-image: url('./images/glow-blue.png');
+			}
+			&#status-red {
+				background-image: url('./images/glow-red.png');
+			}
+			&.active {
+				opacity: 1;
+			}
+			&.loading {
+				opacity: 0.5;
+			}
+		}
+	}
+	#reset {
+		position: absolute; width: 18px; height: 18px; 
+		background: #E22853; border: 3px solid #FFFFFF; 
+		border-radius: 100%; left: 20px; top: 20px;
+		cursor: pointer;
+		&:hover {
+			border: 1px solid #FFFFFF; 
+			background: #b00129;
+		}
+	}
+	#on-off {
+		position: absolute; right: 20px; top: 20px;
+		width: 26px; height: 50px; background: #FFF;
+		border-radius: 18px; cursor: pointer;
+		.toggle {
+			width: 20px; height: 20px; background: #000;
+			border-radius: 100%; position: absolute;
+			top: 5px; left: 3px; 
+			&.on {
+				top: 25px;
+			}
+		}
+	}
+	#eid {
+		width: 200px; height: 130px; position: absolute;
+		border-radius: 12px; right: -170px;
+		background: url('./images/eid.svg') center no-repeat;
+		background-size: 200px 130px; cursor: pointer;
+		margin-bottom: 100px;
+		&:hover {
+			right: -150px;
+		}
+		&.active {
+			right: calc(50% - 250px);
+		}
+	}
+	#cards {
+		.card {
+			width: 200px; height: 130px; position: absolute;
+			border-radius: 12px; left: -170px; z-index: 6000;
+			bottom: 20px; background-image: url('./images/card-1.png');
+			background-size: 200px 130px; cursor: pointer;
+			background-repeat: no-repeat;
+			&:hover {
+				left: -150px; 
+			}
+			&:nth-child(2) {
+				bottom: 170px;
+				background-image: url('./images/card-2.png');
+			}
+			&:nth-child(3) {
+				bottom: 320px;
+				background-image: url('./images/card-3.png');
+			}
+			&.active {
+				left: calc(50% - 150px); bottom: calc(50% - 250px); 
+				transform: rotate(45deg);
+			}
+		}
+		
+	}
+
+}
